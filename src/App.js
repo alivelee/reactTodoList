@@ -29,6 +29,26 @@ class App extends Component {
       items:this.state.items.filter(item => item.id !== id)
     });
   }
+  activateNoteEdit = (id) => {
+    this.setState({
+      items:this.state.items.map(item => {
+        if (item.id === id) {
+          item.editing = true;
+        }
+      })
+    });
+  }
+  editNote = (id,task) => {
+    this.setState({
+      items:this.state.items.map(item => {
+        if (item.id ===id ){
+          item.editing = false;
+          item.task = task;
+        }
+        return item
+      })
+    });
+  }
   render() {
     const {items} = this.state;
     return (
