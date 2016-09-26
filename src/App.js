@@ -24,11 +24,17 @@ class App extends Component {
       items:allItems
     });
   }
+  deleteItems(id){
+    this.setState({
+      items:this.state.items.filter(item => item.id !== id)
+    });
+  }
   render() {
+    const {items} = this.state;
     return (
       <div>
         <Banner />
-        <List items={this.state.items}/>
+        <List items={items} onDelete={this.deleteItems.bind(this)}/>
         <Form onFormSubmit={this.updateItems.bind(this)}/>
       </div>
     );
