@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "font-awesome": "^4.6.3",
+    "node-uuid": "^1.4.7",
     "react-scripts": "0.4.2"
   },
   "dependencies": {
